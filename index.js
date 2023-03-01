@@ -12,10 +12,22 @@ app.get('/', function (req, res) {
     res.send(`Estamos en la ruta de inicio (/)${req.method} `)
 })
 
+app.get('/login/:username/:password', (req, res) => {
+    let username = req.params.username;
+    let passworrd = req.params.password
+    res.send(`El usuario es ${username} y la contrasena es: ${req.params.password}`);
+})
+
 //subir el servidor
 //cambio para subir a git
+//endpoint us
+app.get('/us', (req, res) => {
+    res.send(`Estamos en la ruta de ${req.path} en el metodo ${req.method}`)
+})
 
 app.listen(port, () => {
     console.log(`Servidor esta corriendo en http://${hostname}:${port}`)
 })
+
+
 
