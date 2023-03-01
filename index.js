@@ -14,9 +14,21 @@ app.get('/', function (req, res) {
 
 app.get('/login/:username/:password', (req, res) => {
     let username = req.params.username;
-    let passworrd = req.params.password
-    res.send(`El usuario es ${username} y la contrasena es: ${req.params.password}`);
+    let password = req.params.password
+    // if (username == "pgonzalez" && password == "789") {
+    //     res.send(`Bienvenido usaurio <b>${username}</b>`);
+    // } else {
+    //     res.send(`Usuario y/o contraseña invalidos`);
+    // }
+
+    res.send(username == 'pgonzalez' && password == '789' ? `Bienvenido usuario <b>${username}</b>` :
+        `Usuario o contrasena invalidos`);
+
+    // res.send(`El usuario es ${username} y la contrasena es: ${req.params.password}`);
 })
+
+//generar endpoint para el metodo get que reciba un paramentro de salario
+// y muestre el valor del subsidio si el salario es menor o igual a 1 millon
 
 //subir el servidor
 //cambio para subir a git
